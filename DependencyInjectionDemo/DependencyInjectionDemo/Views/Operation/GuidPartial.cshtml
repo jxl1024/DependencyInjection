@@ -1,0 +1,16 @@
+﻿@*引入命名空间*@
+@using DependencyInjectionDemo.Repository
+
+@*通过该inject引入*@
+@inject IOperationTransientRepository OperationTransientRepository
+@inject IOperationScopeRepository OperationScopeRepository
+@inject IOperationSingletonRepository OperationSingletonRepository
+
+<div class="row">
+    <div>
+        <h2>GuidItem Shows</h2>
+        <h3>TransientGuid: @OperationTransientRepository.GetOperationId()</h3>
+        <h3>ScopedGuid: @OperationScopeRepository.GetOperationId()</h3>
+        <h3>SingletonGuid: @OperationSingletonRepository.GetOperationId()</h3>
+    </div>
+</div>
